@@ -12,12 +12,13 @@
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  background-color: orangered;
   border-radius: 0.5rem;
+  color: #071013;
+  background-color: #e6f5ff;
 }
 
 body {
-  background-color: greenyellow;
+  background-color: #0496ff;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   display: flex;
@@ -40,48 +41,69 @@ h1 {
 }
 
 .input-form {
-  background-color: #fff8b09f;
+  /* background-color: #fff8b09f; */
   padding: 2rem;
   margin-top: 2rem;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 input {
   flex: 1;
-
   position: relative;
   padding: 0.8rem 1.2rem;
   border-radius: 0.25rem;
   border: none;
   outline: none;
   font-size: 1.25rem;
+  box-shadow: 0 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+.btn-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 button {
-  background: #ffff76;
+  width: max-content;
   border: 0;
   outline: 0;
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   font-weight: 300;
-  color: #333;
+  border: 2px solid transparent;
   cursor: pointer;
   font: inherit;
-  transition: all 0.4s ease;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transition: all 0.5s ease;
+  box-shadow: 0 1rem 2rem 0.5rem rgba(0, 0, 0, 0.15);
 }
 button:is(:hover, :focus-visible) {
-  background-color: #fff338;
   transform: translateY(-0.25rem);
   box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.1);
 }
 button:active {
-  background-color: #fff338;
   transform: translateY(0rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+.btn-primary {
+  background: #027bce;
+  color: #fff0f0;
+}
+.btn-primary:is(:hover, :focus-visible) {
+  color: #027bce;
+  border-color: #027bce;
+  background-color: #fff0f0;
+}
+.btn-secondary {
+  color: #027bce;
+  border-color: #027bce;
+  background-color: #fff0f0;
+}
+.btn-secondary:is(:hover, :focus-visible) {
+  background: #027bce;
+  color: #fff0f0;
+  border-color: transparent;
 }
 
 input::-webkit-calendar-picker-indicator {
@@ -120,12 +142,15 @@ input::-webkit-calendar-picker-indicator {
   gap: 1rem;
   align-items: center;
   margin-top: 2rem;
+  background-color: #027bce;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 .result div {
-  background-color: #fff338;
   width: 5rem;
   height: 5rem;
-
+  transition: all 0.4s ease;
+  cursor: pointer;
   display: inline-block;
   border-radius: 0.5rem;
   display: flex;
@@ -133,12 +158,18 @@ input::-webkit-calendar-picker-indicator {
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;
+  background-color: #fff0f0;
+  box-shadow: 0 1rem 1rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 .result div span {
   font-size: 1.1rem;
 }
 .result div .data {
-  color: orangered;
   font-size: 2rem;
   font-weight: bold;
+}
+
+.result div:is(:hover, :focus-visible) {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1.5rem 1.5rem 0.8rem rgba(0, 0, 0, 0.1);
 }

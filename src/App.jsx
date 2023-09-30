@@ -3,9 +3,9 @@ import Result from "./Result";
 
 const App = () => {
   const [date, setDate] = useState("");
-  const [day, setDay] = useState("");
-  const [month, setMonth] = useState("");
-  const [year, setYear] = useState("");
+  const [day, setDay] = useState(null);
+  const [month, setMonth] = useState(null);
+  const [year, setYear] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,6 +41,9 @@ const App = () => {
       y3--;
     }
 
+    if (m3 < 10) m3 = `0${m3}`;
+    if (d3 < 10) d3 = `0${d3}`;
+    if (y3 < 10) y3 = `0${y3}`;
     setDay(d3);
     setMonth(m3);
     setYear(y3);
@@ -51,9 +54,9 @@ const App = () => {
   };
 
   const handleReset = () => {
-    setMonth("");
-    setDay("");
-    setYear("");
+    setMonth(null);
+    setDay(null);
+    setYear(null);
     setDate("");
   };
 
@@ -71,16 +74,22 @@ const App = () => {
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
-          <button>Calculate!</button>
+          <div className="btn-container">
+            {" "}
+            <button className="btn-primary" type="submit">
+              Calculate!
+            </button>
+            <button className="btn-secondary" onClick={handleReset}>
+              Reset
+            </button>
+          </div>
         </form>
-        {(day || month || year) && (
+        {day || month || year ? (
           <Result day={day} month={month} year={year} />
+        ) : (
+          ""
         )}
       </div>
-
-      <button onClick={handleReset} className="reset">
-        Reset
-      </button>
     </div>
   );
 };
