@@ -17,7 +17,7 @@
 }
 
 body {
-  background-color: #aec3ae;
+  background-color: greenyellow;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   display: flex;
@@ -102,9 +102,6 @@ input::-webkit-calendar-picker-indicator {
 }
 
 @media (min-width: 40em) {
-  body {
-    background-color: greenyellow;
-  }
   h1 {
     text-align: center;
     font-size: 3rem;
